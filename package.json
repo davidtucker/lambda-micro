@@ -1,0 +1,91 @@
+{
+  "name": "lambda-micro",
+  "version": "0.0.1",
+  "description": "Minimal JavaScript microservices router for AWS Lambda",
+  "main": "index.js",
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "test": "npx jest",
+    "lint": "npx eslint --ext .js",
+    "check-dependencies": "npx npm-check --skip-unused --update",
+    "cz": "git-cz",
+    "release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidtucker/lambda-micro.git"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/preset-env": "^7.13.15",
+    "@commitlint/config-conventional": "^12.1.1",
+    "commitizen": "^4.2.3",
+    "commitlint": "^12.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "eslint-plugin-unicorn": "^23.0.0",
+    "form-data": "^4.0.0",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "jest-html-reporter": "^3.3.0",
+    "jest-junit": "^12.0.0",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.1.2",
+    "prettier-eslint": "^11.0.0",
+    "semantic-release": "^17.4.2"
+  },
+  "keywords": [
+    "lambda",
+    "aws",
+    "lambda",
+    "router",
+    "framework",
+    "middleware",
+    "express"
+  ],
+  "author": "David Tucker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidtucker/lambda-micro/issues"
+  },
+  "homepage": "https://github.com/davidtucker/lambda-micro#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "body-max-line-length": [
+        2,
+        "always",
+        240
+      ]
+    }
+  },
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "busboy": "^0.3.1",
+    "url-pattern": "^1.0.3"
+  }
+}
