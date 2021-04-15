@@ -6,6 +6,9 @@
   "engines": {
     "node": ">=12"
   },
+  "release": {
+    "branches": ["main"]
+  },
   "scripts": {
     "test": "npx jest",
     "lint": "npx eslint --ext .js",
