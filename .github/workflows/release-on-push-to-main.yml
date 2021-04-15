@@ -30,16 +30,17 @@ jobs:
     - name: Test
       run: npm test
 
+    - name: Lint
+      run: npm run lint
+
     - name: Coverage
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main' && matrix.node-version == '12.x'
       uses: codecov/codecov-action@v1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./test-reports/coverage/coverage-final.json
         fail_ci_if_error: true
         verbose: true
-
-    - name: Lint
-      run: npm run lint
 
     - name: Release
       if: github.event_name == 'push' && github.ref == 'refs/heads/main' && matrix.node-version == '12.x'
