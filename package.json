@@ -87,5 +87,10 @@
     "ajv": "^6.12.6",
     "busboy": "^0.3.1",
     "url-pattern": "^1.0.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
