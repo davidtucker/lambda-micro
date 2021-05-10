@@ -109,3 +109,40 @@ exports.handler = async (event, context) => {
   return router.run(event, context);
 };
 ```
+
+### Logging
+
+This framework also provides a logger that includes a basic configurable logger for Lambda.  Creating a logger is as simple as calling:
+
+```javascript
+// Create a logger by passing in Lambda event and context
+const logger = getLogger(event, context);
+```
+
+Once you have a logger, you can log messages at different levels.  This includes:
+
+| Function | Log Level |
+|-------|-------------|
+| logger.trace | TRACE (10) |
+| logger.debug | DEBUG (20) |
+| logger.info | INFO (30) |
+| logger.warn | WARN (40) |
+| logger.error | ERROR (50) |
+
+#### Logging Content
+
+The logger can log three types of values: plain strings, JSON strings (which will be parsed and flattened), and objects (which will be flattened).
+
+#### Configuring the Logging Level
+
+The logger has a configurable log level.  By default, the logger sets the log level at `INFO`.  This means that it will log `INFO`, `WARN`, and `ERROR` messages.
+
+The logger is configurable for the log level.  If you specify a value for the `LOG_LEVEL` environment variable, it will be used.  This should be specified as the numeric value:
+
+```javascript
+// Setting the environment variable in the CDK
+// Will log DEBUG and above
+lambdaFunction.addEnvironment('LOG_LEVEL', '20');
+```
+
+In the above example, it would not also log the `DEBUG` messages (in addition to `INFO`, `WARN`, and `ERROR` messages).
