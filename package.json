@@ -1,20 +1,23 @@
 {
   "name": "lambda-micro",
-  "version": "0.0.1",
+  "version": "1.0.2-rc.1",
   "description": "Minimal JavaScript microservices router for AWS Lambda",
-  "main": "index.js",
+  "main": "build/index.js",
   "engines": {
     "node": ">=12"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
   "scripts": {
     "test": "npx jest",
-    "lint": "npx eslint --ext .js",
+    "lint": "npx eslint --ext lib/**/*.js",
     "check-dependencies": "npx npm-check --skip-unused --update",
     "cz": "git-cz",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "build": "npx esbuild index.js --bundle --outdir=build --platform=node --target=es2020"
   },
   "repository": {
     "type": "git",
@@ -70,7 +73,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "lib/**/*.js": [
       "eslint --fix"
     ]
   },
