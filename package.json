@@ -2,7 +2,7 @@
   "name": "lambda-micro",
   "version": "1.0.2-rc.1",
   "description": "Minimal JavaScript microservices router for AWS Lambda",
-  "main": "dist/index.js",
+  "main": "build/index.js",
   "engines": {
     "node": ">=14"
   },
@@ -17,7 +17,7 @@
     "check-dependencies": "npx npm-check --skip-unused --update",
     "cz": "git-cz",
     "release": "semantic-release",
-    "build": "npx esbuild@0 index.js --bundle --outdir=dist --platform=node --target=node14 --format=cjs  --allow-overwrite --minify"
+    "build": "npx esbuild@0 index.js --bundle --outdir=build --platform=node --target=node14 --format=cjs  --allow-overwrite --minify"
   },
   "repository": {
     "type": "git",
