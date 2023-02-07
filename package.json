@@ -7,7 +7,9 @@
     "node": ">=12"
   },
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
   "scripts": {
     "test": "npx jest",
@@ -21,19 +23,19 @@
     "url": "git+https://github.com/davidtucker/lambda-micro.git"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.13.14",
-    "@babel/preset-env": "^7.13.15",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-env": "^7.20.2",
     "@commitlint/config-conventional": "^12.1.1",
     "commitizen": "^4.2.3",
     "commitlint": "^12.1.1",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.12.1",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.24.1",
     "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-promise": "^4.2.1",
@@ -47,7 +49,7 @@
     "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
     "prettier-eslint": "^11.0.0",
-    "semantic-release": "^17.4.2"
+    "semantic-release": "^19.0.5"
   },
   "keywords": [
     "lambda",
@@ -88,7 +90,7 @@
   },
   "dependencies": {
     "ajv": "^6.12.6",
-    "busboy": "^0.3.1",
+    "busboy": "^1.6.0",
     "url-pattern": "^1.0.3"
   },
   "config": {
