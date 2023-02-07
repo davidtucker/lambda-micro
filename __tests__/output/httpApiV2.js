@@ -93,5 +93,17 @@ describe('Output', () => {
       expect(isValid).toStrictEqual(true);
       expect(validator.errors).toBeNull();
     });
+
+    it('should return correct content-type when content-type passed', () => {
+      const result = OutputUtils.HttpApiV2('', 200, {
+        'Content-Type': 'text/html',
+      });
+      expect(result).toBeDefined();
+      expect(result.statusCode).toStrictEqual(200);
+      expect(result.headers['Content-Type']).toStrictEqual('text/html');
+      const isValid = validator(result);
+      expect(isValid).toStrictEqual(true);
+      expect(validator.errors).toBeNull();
+    });
   });
 });
